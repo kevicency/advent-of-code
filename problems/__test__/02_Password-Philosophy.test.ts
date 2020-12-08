@@ -5,12 +5,8 @@ import problem02, {
 } from '../02_Password-Philosophy'
 
 describe('Problem 2', () => {
-  test(`answer is ${problem02.solve()}`, () => {
-    // ok
-  })
-  test(`bonus answer is ${problem02.solveBonus()}`, () => {
-    // ok
-  })
+  test.todo(`answer is ${problem02.solve()}`)
+  test.todo(`bonus answer is ${problem02.solveBonus()}`)
 
   describe('helpers', () => {
     test('parse input', () => {
