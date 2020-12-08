@@ -5,6 +5,7 @@ module.exports = {
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
     '^.+\\.(ts|tsx)$': 'babel-jest',
+    '^.+\\.(txt|md)$': 'jest-raw-loader',
   },
   watchPlugins: [
     'jest-watch-typeahead/filename',
