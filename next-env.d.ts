@@ -6,3 +6,4 @@ declare module '*.txt' {
   export default text
 }
 declare module '*.md'
+declare module 'graph-data-structure'

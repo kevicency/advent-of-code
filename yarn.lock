@@ -3361,6 +3361,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.2.4
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+graph-data-structure@1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/graph-data-structure/-/graph-data-structure-1.13.0.tgz#78daac4b6b0dac7b096d709c48579590097f3fbd"
+  integrity sha512-ZTmwnno/Fk1cozBeW1cgWpKtCw8qaVxhaboQYxrNa7RmOQPW4NAF7GkDripLl20Vzu2BH12ED0uaqo9ayjjH7Q==
+
 growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
