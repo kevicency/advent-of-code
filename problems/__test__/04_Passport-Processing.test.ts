@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import * as _ from 'lodash'
+import { flow } from 'lodash'
+import { compose, forEach, groupBy, head, split } from 'lodash/fp'
 import problem04, {
   isValidPassport,
   parseInput,
@@ -75,11 +77,11 @@ describe('Problem 04', () => {
         ],
       },
       (values, type) => {
-        _.chain(values)
-          .groupBy((data) => data.split(':')[0])
-          .forEach((data, _) => {
-            data.forEach((item) => {
-              const [prop, value] = item.split(':')
+        flow(
+          groupBy(compose(head, split(':'))),
+          forEach((literals: string[]) => {
+            literals.forEach((literal) => {
+              const [prop, value] = literal.split(':')
               if (type === 'valid') {
                 test(`is valid ${prop}:${value}`, () => {
                   expect(validator[prop](value)).toBeTruthy()
@@ -91,7 +93,7 @@ describe('Problem 04', () => {
               }
             })
           })
-          .value()
+        )(values)
       }
     )
   })

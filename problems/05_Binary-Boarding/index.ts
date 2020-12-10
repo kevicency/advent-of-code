@@ -1,4 +1,15 @@
-import * as _ from 'lodash'
+import { curryRight } from 'lodash'
+import {
+  countBy,
+  flow,
+  identity,
+  map,
+  mapValues,
+  max,
+  mean,
+  reduce,
+  sortBy,
+} from 'lodash/fp'
 import { Problem } from '../Problem'
 import inputTxt from './input.txt'
 import description from './PROBLEM.md'
@@ -9,11 +20,12 @@ export default {
   input,
   description,
 
-  solve: () => _.chain(input).map(computeSeatId).max().value(),
-  solveBonus: () => {
-    return _.map(input, computeSeatId)
-      .sort()
-      .reduce(
+  solve: () => flow(map(computeSeatId), max)(input),
+  solveBonus: () =>
+    flow(
+      map(computeSeatId),
+      sortBy(identity),
+      reduce(
         ({ last, result }, seatId) => {
           return seatId === last + 2 && !result
             ? {
@@ -26,8 +38,8 @@ export default {
               }
         },
         { last: Number.MIN_VALUE, result: 0 }
-      ).result
-  },
+      )
+    )(input).result,
 } as Problem
 
 export function computeSeatId(seatOrIdentifier: Seat | string): number {
@@ -37,47 +49,43 @@ export function computeSeatId(seatOrIdentifier: Seat | string): number {
   return seatOrIdentifier.row * 8 + seatOrIdentifier.col
 }
 export function computeSeat(identifier: string): Seat {
-  const pows = _.countBy(
-    identifier,
-    (x) =>
-      ({
-        F: 'row',
-        B: 'row',
-        L: 'col',
-        R: 'col',
-      }[x])
-  )
-
-  return _.chain(
-    reduceBoundaries(
-      { row: [0, 2 ** pows.row - 1], col: [0, 2 ** pows.col - 1] },
-      identifier
-    )
-  )
-    .mapValues((boundary) => _.mean(boundary))
-    .value()
+  return flow(
+    countBy(
+      (x: string) =>
+        ({
+          F: 'row',
+          B: 'row',
+          L: 'col',
+          R: 'col',
+        }[x])
+    ),
+    mapValues((pow) => 2 ** pow - 1),
+    mapValues((max) => [0, max]),
+    curryRight(divideAndConquer)(identifier)
+  )(identifier)
 }
-export function reduceBoundaries(
+
+export function divideAndConquer(
   { row, col }: Boundaries,
   identifier: string
-): Boundaries {
+): Seat {
   if (!identifier) {
-    return { row, col }
+    return { row: mean(row), col: mean(col) }
   }
 
   const [head, tail] = [identifier[0], identifier.slice(1)]
 
   switch (head) {
     case 'F':
-      return reduceBoundaries({ row: takeLowerHalf(row), col }, tail)
+      return divideAndConquer({ row: takeLowerHalf(row), col }, tail)
     case 'B':
-      return reduceBoundaries({ row: takeUpperHalf(row), col }, tail)
+      return divideAndConquer({ row: takeUpperHalf(row), col }, tail)
     case 'L':
-      return reduceBoundaries({ row, col: takeLowerHalf(col) }, tail)
+      return divideAndConquer({ row, col: takeLowerHalf(col) }, tail)
     case 'R':
-      return reduceBoundaries({ row, col: takeUpperHalf(col) }, tail)
+      return divideAndConquer({ row, col: takeUpperHalf(col) }, tail)
     default:
-      reduceBoundaries({ row, col }, tail)
+      divideAndConquer({ row, col }, tail)
   }
 }
 
