@@ -1,7 +1,7 @@
 import problem03, { Map } from '../03_Toboggan-Trajectory'
 import testInput from './data/03_input.txt'
 
-describe('Problem02', () => {
+describe('Problem03', () => {
   test.todo(`answer is ${problem03.solve()}`)
   test.todo(`bonus answer is ${problem03.solveBonus()}`)
 

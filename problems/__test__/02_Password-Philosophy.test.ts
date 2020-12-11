@@ -4,7 +4,7 @@ import problem02, {
   validateInputBonus,
 } from '../02_Password-Philosophy'
 
-describe('Problem 2', () => {
+describe('Problem 02', () => {
   test.todo(`answer is ${problem02.solve()}`)
   test.todo(`bonus answer is ${problem02.solveBonus()}`)
 
