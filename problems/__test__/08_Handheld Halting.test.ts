@@ -5,7 +5,7 @@ describe('Problem 08', () => {
   beforeEach(() => {
     BootProcess.ID = 0
   })
-  // test.todo(`answer is ${problem08.solve()}`)
+  test.todo(`answer is ${problem08.solve()}`)
   test.todo(`bonus answer is ${problem08.solveBonus()}`)
 
   test('solve bonus test input', () => {
