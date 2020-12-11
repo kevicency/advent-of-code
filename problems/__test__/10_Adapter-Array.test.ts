@@ -20,7 +20,7 @@ describe('Problem 10', () => {
   })
 
   describe('helpers', () => {
-    test('joltConnections', () => {
+    test('adapterConnections', () => {
       const connections = Array.from(adapterConnections([1, 4, 5, 7, 10]))
 
       expect(connections).toStrictEqual([
