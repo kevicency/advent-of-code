@@ -1,4 +1,5 @@
-import { map } from 'lodash'
+import { isEmpty, map } from 'lodash'
+
 export interface MapWithIndex<T = any, R = any> {
   (array: Array<T>): R[]
 }
@@ -13,3 +14,18 @@ export function pairWithIndexFn<T>(): MapWithIndex<T, [T, number]> {
 
 export const pairWithIndex = <T>(arr: T[]): [T, number][] =>
   pairWithIndexFn<T>()(arr)
+
+export const log = <T>(obj: T): T => {
+  // eslint-disable-next-line no-console
+  console.log(obj)
+  return obj
+}
+export const logEach = <T>(arr: T[]): T[] => map(arr, log)
+export const logEachWithIndex = <T>(arr: T[]): T[] =>
+  map(arr, (x, i) => log([i, x]) && x)
+
+export const lines = (contents: string): string[] =>
+  contents
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => !isEmpty(line))
