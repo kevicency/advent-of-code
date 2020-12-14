@@ -3,11 +3,7 @@ import inputTxt from './data/13_input.txt'
 
 describe('Problem 13', () => {
   test.todo(`answer is ${problem13.solve()}`)
-
-  test(`bonus answer is`, () => {
-    const r = problem13.solveBonus()
-    expect(r).toBe(760171380521445)
-  })
+  test.todo(`bonus answer is ${problem13.solveBonus()}`)
 
   test('solve test input', () => {
     const input = parseInput(inputTxt)
