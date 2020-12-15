@@ -1,5 +1,7 @@
 import { flow, map, reduce, sum, zip } from 'lodash/fp'
 import { lines } from '../fp'
+import { result } from '../util'
+import input from './data/14.txt'
 
 describe('Day 14', () => {
   type Instruction =
@@ -108,19 +110,7 @@ describe('Day 14', () => {
     expect(memSum(memory)).toBe(165)
   })
 
-  describe('Part 1:', () => {
-    it('result', () => {
-      const result = flow(
-        parseInput,
-        runInstructionsPart1,
-        memSum
-      )(require('./data/14.txt'))
-
-      expect(result).toBeDefined()
-
-      console.log({ part1: result })
-    })
-  })
+  result('Part 1', () => flow(parseInput, runInstructionsPart1, memSum)(input))
 
   function runInstructionsPart2(
     instructions: Instruction[]
@@ -179,17 +169,5 @@ describe('Day 14', () => {
     expect(memSum(memory2)).toBe(208)
   })
 
-  describe('Part 2:', () => {
-    it('result', () => {
-      const result = flow(
-        parseInput,
-        runInstructionsPart2,
-        memSum
-      )(require('./data/14.txt'))
-
-      expect(result).toBeDefined()
-
-      console.log({ part2: result })
-    })
-  })
+  result('Part 2', () => flow(parseInput, runInstructionsPart2, memSum)(input))
 })

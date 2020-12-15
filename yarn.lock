@@ -4287,6 +4287,11 @@ jest-serializer@^26.6.2:
     "@types/node" "*"
     graceful-fs "^4.2.4"
 
+jest-simple-dot-reporter@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/jest-simple-dot-reporter/-/jest-simple-dot-reporter-1.0.5.tgz#afb4a1ea5fc5d4ede8734e642bb14301521cb813"
+  integrity sha512-cZLFG/C7k0+WYoIGGuGXKm0vmJiXlWG/m3uCZ4RaMPYxt8lxjdXMLHYkxXaQ7gVWaSPe7uAPCEUcRxthC5xskg==
+
 jest-snapshot@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-26.6.2.tgz#f3b0af1acb223316850bd14e1beea9837fb39c84"
