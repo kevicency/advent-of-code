@@ -16,7 +16,6 @@ export const pairWithIndex = <T>(arr: T[]): [T, number][] =>
   pairWithIndexFn<T>()(arr)
 
 export const log = <T>(obj: T): T => {
-  // eslint-disable-next-line no-console
   console.log(obj)
   return obj
 }

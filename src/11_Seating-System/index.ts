@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { all, flatten, map, range, sum } from 'lodash/fp'
 import { Problem } from '../Problem'
 import inputTxt from './input.txt'

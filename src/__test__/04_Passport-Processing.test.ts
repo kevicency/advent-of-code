@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 import * as _ from 'lodash'
 import { flow } from 'lodash'
 import { compose, forEach, groupBy, head, split } from 'lodash/fp'
