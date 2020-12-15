@@ -1,7 +1,7 @@
 // import input from './data/14.txt'
 
 import { trim } from 'lodash/fp'
-import { result } from '../util'
+import { resultPart1, resultPart2 } from '../util'
 
 describe('Day 15', () => {
   const parseInput = (contents: string) =>
@@ -98,7 +98,7 @@ describe('Day 15', () => {
     return iter.next().value
   }
 
-  result('Part 1', () =>
+  resultPart1(() =>
     elementAt(2020 - 1, speakNumbers2([0, 20, 7, 16, 1, 18, 15]))
   )
 
@@ -108,7 +108,7 @@ describe('Day 15', () => {
     expect(elementAt(n - 1, speakNumbers2([3, 2, 1]))).toBe(18)
   })
 
-  result('Part 2', () =>
+  resultPart2(() =>
     elementAt(30000000 - 1, speakNumbers2([0, 20, 7, 16, 1, 18, 15]))
   )
 })

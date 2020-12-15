@@ -1,4 +1,5 @@
 import { noop } from 'lodash'
+import { curry } from 'lodash/fp'
 import { performance, PerformanceObserver } from 'perf_hooks'
 
 export function result<T>(name: string, fn: () => T): T {
@@ -12,6 +13,9 @@ export function result<T>(name: string, fn: () => T): T {
 
   return result
 }
+
+export const resultPart1 = curry(result)('Part 1')
+export const resultPart2 = curry(result)('Part 2')
 
 function measure<T>(fn: () => T) {
   // Wrap the solver for performance measurment

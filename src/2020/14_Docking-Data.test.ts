@@ -1,6 +1,6 @@
 import { flow, map, reduce, sum, zip } from 'lodash/fp'
 import { lines } from '../fp'
-import { result } from '../util'
+import { resultPart1, resultPart2 } from '../util'
 import input from './data/14.txt'
 
 describe('Day 14', () => {
@@ -110,7 +110,7 @@ describe('Day 14', () => {
     expect(memSum(memory)).toBe(165)
   })
 
-  result('Part 1', () => flow(parseInput, runInstructionsPart1, memSum)(input))
+  resultPart1(() => flow(parseInput, runInstructionsPart1, memSum)(input))
 
   function runInstructionsPart2(
     instructions: Instruction[]
@@ -169,5 +169,5 @@ describe('Day 14', () => {
     expect(memSum(memory2)).toBe(208)
   })
 
-  result('Part 2', () => flow(parseInput, runInstructionsPart2, memSum)(input))
+  resultPart2(() => flow(parseInput, runInstructionsPart2, memSum)(input))
 })
