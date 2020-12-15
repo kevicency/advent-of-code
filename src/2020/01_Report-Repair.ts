@@ -1,25 +1,25 @@
-import { filter, flatMap, flow, head, map } from 'lodash/fp'
+import { flow } from 'lodash'
+import { filter, flatMap, head, map } from 'lodash/fp'
 import { pairWithIndexFn } from '../fp'
-import { Problem } from '../Problem'
-import inputTxt from './input.txt'
-import description from './PROBLEM.md'
+import { resultPart1, resultPart2 } from '../util'
+import inputTxt from './data/01.txt'
 
-const input = inputTxt.split('\n').map((x) => +x)
+describe('Day 01', () => {
+  const parseInput = (contents: string) => contents.split('\n').map(Number)
 
-export default {
-  input,
-  description,
+  const input = parseInput(inputTxt)
 
-  solve: () =>
+  resultPart1(() =>
     flow(
       pairWithIndexFn<number>(),
       flatMap(([x, i]) => input.slice(i + 1).map((y) => [x + y, x * y])),
       filter(([sum, _prod]) => sum === 2020),
       map(([_sum, prod]) => prod),
       head
-    )(input),
+    )(input)
+  )
 
-  solveBonus: () =>
+  resultPart2(() =>
     flow(
       pairWithIndexFn<number>(),
       flatMap(([x, i]) =>
@@ -32,5 +32,6 @@ export default {
       filter(([sum, _prod]) => sum === 2020),
       map(([_sum, prod]) => prod),
       head
-    )(input),
-} as Problem
+    )(input)
+  )
+})
