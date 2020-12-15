@@ -29,3 +29,5 @@ export const lines = (contents: string): string[] =>
     .split('\n')
     .map((line) => line.trim())
     .filter((line) => !isEmpty(line))
+
+export const length = (collection: any[]): number => collection.length
