@@ -1,5 +1,5 @@
 import { last } from 'lodash/fp'
-import problem12, { Boat, parseInput, WaypointBoat } from '../../12_Rain-Risk'
+import problem12, { Boat, parseInput, WaypointBoat } from '../12_Rain-Risk'
 
 describe('Problem 12', () => {
   test.todo(`answer is ${problem12.solve()}`)

@@ -227,8 +227,6 @@ describe('Day 16', () => {
     const input = parseInput(inputTxt)
     const fieldPositions = getFieldPositions(input)
 
-    console.log({ fieldPositions })
-
     return fieldPositions
       .map((fieldName, i) =>
         fieldName.startsWith('departure') ? input.myTicket[i] : 1

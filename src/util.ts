@@ -2,8 +2,16 @@ import { noop } from 'lodash'
 import { curry } from 'lodash/fp'
 import { performance, PerformanceObserver } from 'perf_hooks'
 
-export function result<T>(name: string, fn: () => T): T {
-  const { result, duration } = measure(fn)
+export function result<T>(name: string, fn: () => T, optional = false): T {
+  const { result, duration } =
+    optional && process.env.OPTIONAL !== 'true'
+      ? {
+          result: "Optional test (slow). Run jest with 'OPTIONAL=true yarn test'" as any,
+          duration: 0,
+        }
+      : measure(fn)
+
+  console.log({ result, duration })
 
   describe(`${name}: ${result} (${
     Math.round(duration * 100) / 100
@@ -15,7 +23,8 @@ export function result<T>(name: string, fn: () => T): T {
 }
 
 export const resultPart1 = curry(result)('Part 1')
-export const resultPart2 = curry(result)('Part 2')
+export const resultPart2 = <T>(fn: () => T, optional = false) =>
+  result('Part 2', fn, optional)
 
 function measure<T>(fn: () => T) {
   // Wrap the solver for performance measurment

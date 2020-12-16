@@ -4,7 +4,7 @@ import problem10, {
   countPaths,
   getAdapterGraph,
   parseInput,
-} from '../../10_Adapter-Array'
+} from '../10_Adapter-Array'
 import inputTxt from './data/10_input.txt'
 import input2Txt from './data/10_input2.txt'
 

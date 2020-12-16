@@ -108,7 +108,7 @@ describe('Day 15', () => {
     expect(elementAt(n - 1, speakNumbers2([3, 2, 1]))).toBe(18)
   })
 
-  resultPart2(() =>
-    elementAt(30000000 - 1, speakNumbers2([0, 20, 7, 16, 1, 18, 15]))
-  )
+  resultPart2(() => {
+    return elementAt(30000000 - 1, speakNumbers2([0, 20, 7, 16, 1, 18, 15]))
+  }, true)
 })
