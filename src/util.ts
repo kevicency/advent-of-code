@@ -2,11 +2,11 @@ import { noop } from 'lodash'
 import { curry } from 'lodash/fp'
 import { performance, PerformanceObserver } from 'perf_hooks'
 
-export function result<T>(name: string, fn: () => T, optional = false): T {
+export function result<T>(name: string, fn: () => T, slow = false): T {
   const { result, duration } =
-    optional && process.env.OPTIONAL !== 'true'
+    slow && process.env.SLOW !== 'true'
       ? {
-          result: "Optional test (slow). Run jest with 'OPTIONAL=true yarn test'" as any,
+          result: "Optional (slow) test. Run jest with 'SLOW=true yarn test'" as any,
           duration: 0,
         }
       : measure(fn)
