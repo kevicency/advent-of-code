@@ -1,5 +1,5 @@
 import { all, flatten, map, range, sum } from 'lodash/fp'
-import { Problem } from '../Problem'
+import { Problem } from '../../Problem'
 import inputTxt from './input.txt'
 import description from './PROBLEM.md'
 

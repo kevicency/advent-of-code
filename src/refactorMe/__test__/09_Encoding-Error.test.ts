@@ -3,7 +3,7 @@ import problem09, {
   isValidPreambleFor,
   parseInput,
   subsets,
-} from '../09_Encoding-Error'
+} from '../../09_Encoding-Error'
 import inputTxt from './data/09_input.txt'
 
 describe('Problem 08', () => {

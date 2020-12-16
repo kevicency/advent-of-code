@@ -1,4 +1,4 @@
-import problem08, { BootProcess, parseInput } from '../08_Handheld-Halting'
+import problem08, { BootProcess, parseInput } from '../../08_Handheld-Halting'
 import inputTxt from './data/08_input.txt'
 
 describe('Problem 08', () => {

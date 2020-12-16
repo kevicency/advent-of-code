@@ -1,4 +1,4 @@
-import { Problem } from '../Problem'
+import { Problem } from '../../Problem'
 import inputTxt from './input.txt'
 import description from './PROBLEM.md'
 

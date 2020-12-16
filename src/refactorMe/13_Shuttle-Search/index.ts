@@ -1,6 +1,6 @@
 import { flow, map, minBy } from 'lodash/fp'
 import { asSequence } from 'sequency'
-import { Problem } from '../Problem'
+import { Problem } from '../../Problem'
 import inputTxt from './input.txt'
 import description from './PROBLEM.md'
 
