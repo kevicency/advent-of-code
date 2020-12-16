@@ -30,3 +30,8 @@ export const lines = (contents: string): string[] =>
     .filter((line) => !isEmpty(line))
 
 export const length = (collection: any[]): number => collection.length
+
+export const toMap = <V>(obj: { [s: string]: V }) =>
+  new Map<string, V>(Object.entries(obj))
+export const fromMap = <K, V>(map: Map<K, V>) =>
+  Object.fromEntries(map.entries())
