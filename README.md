@@ -1,27 +1,56 @@
-# NextJS Typescript Boilerplate
+# 🎄 Advent of Code 2020 solutions (TypeScript) 🎄
 
-Bootstrap a developer-friendly NextJS app configured with:
+## Completed
 
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
+[![Day](https://badgen.net/badge/01/%E2%98%85%E2%98%85/green)](src/2020/01_Report-Repair.ts)
+[![Day](https://badgen.net/badge/02/%E2%98%85%E2%98%85/green)](src/2020/02_Password-Philosophy.ts)
+[![Day](https://badgen.net/badge/02/%E2%98%85%E2%98%85/green)](src/2020/03_Toboggan-Trajectory.ts)
+[![Day](https://badgen.net/badge/04/%E2%98%85%E2%98%85/green)](src/refactorMe/04_Passport-Processing/index.ts)
+[![Day](https://badgen.net/badge/05/%E2%98%85%E2%98%85/green)](src/refactorMe/05_Binary-Boarding/index.ts)  
+[![Day](https://badgen.net/badge/06/%E2%98%85%E2%98%85/green)](src/refactorMe/06_Custom-Customs/index.ts)  
+[![Day](https://badgen.net/badge/07/%E2%98%85%E2%98%85/green)](src/refactorMe/07_Handy-Haversacks/index.ts)  
+[![Day](https://badgen.net/badge/08/%E2%98%85%E2%98%85/green)](src/refactorMe/08_Handheld-Halting/index.ts)  
+[![Day](https://badgen.net/badge/09/%E2%98%85%E2%98%85/green)](src/refactorMe/09_Encoding-Error/index.ts)  
+[![Day](https://badgen.net/badge/10/%E2%98%85%E2%98%85/green)](src/refactorMe/10_Adapter-Array/index.ts)  
+[![Day](https://badgen.net/badge/11/%E2%98%85%E2%98%85/green)](src/refactorMe/11_Seating-System/index.ts)  
+[![Day](https://badgen.net/badge/12/%E2%98%85%E2%98%85/green)](src/refactorMe/12_Rain-Risk/index.ts)  
+[![Day](https://badgen.net/badge/13/%E2%98%85%E2%98%85/green)](src/refactorMe/13_Shuttle-Search/index.ts)  
+[![Day](https://badgen.net/badge/14/%E2%98%85%E2%98%85/green)](src/2020/14_Docking-Data.ts)  
+[![Day](https://badgen.net/badge/15/%E2%98%85%E2%98%85/green)](src/2020/15_Rambunctious-Recitation.ts)
+[![Day](https://badgen.net/badge/16/%E2%98%85%E2%98%85/green)](src/2020/16_Ticket-Translation.ts)  
+[![Day](https://badgen.net/badge/17/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/18/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/19/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/20/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/21/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/22/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/23/%E2%98%86%E2%98%86/gray)](src/2020/)
+[![Day](https://badgen.net/badge/24/%E2%98%86%E2%98%86/gray)](src/2020/)
 
-## Deploy your own
+## Installation
 
-Deploy the example using [Vercel](https://vercel.com):
+Required: Node 12 or higher
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-# or
-yarn create next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
+```
+$ yarn install
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Running the solutions
+
+Run all days
+
+```
+yarn start
+```
+
+Run specific days (XX in 00...24)
+
+```
+yarn start -t "Day XX"
+```
+
+Run with optional (slow) tests
+
+```
+SLOW=true yarn start
+```
